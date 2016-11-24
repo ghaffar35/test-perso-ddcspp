@@ -34,11 +34,11 @@
                 <h3>Posts</h3>
                 <?php
                     // préparation des posts
-                    $posts = $bdd->query('SELECT author, title, description, date, url, type FROM post ORDER BY ID');
-                    //$author = $bdd->query('SELECT pseudo')
+                    $posts = $bdd->query('SELECT post.id, post.id_user, post.title, post.description, post.date, post.url, post.type, user.id, user.pseudo FROM post, user WHERE post.id_user = user.id ORDER BY post.id');
+                    
                     // affichage des posts
                     while ($post = $posts->fetch()) {
-                        echo '<div class="post"><h3>'.$post['title'].'</h3><p><i>By, '.$post['author'].' - '.$post['date'].'</i></p>'.'<div class="content">'.($post[type]==0?'':'<img src='.$post['url'] .'>').'<p>'.$post['description'].'</p></div></div>';
+                        echo '<div class="post"><h3>'.$post['title'].'</h3><p><i>By, '.$post['pseudo'].' - '.$post['date'].'</i></p>'.'<div class="content">'.($post[type]==0?'':'<img src='.$post['url'] .'>').'<p>'.$post['description'].'</p></div></div>';
                     }
                 ?>
             </section>
