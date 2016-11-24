@@ -14,10 +14,19 @@
             <h2>1er test de base de donnée pour le projet DDCSPP de la Code Académie de Rennes (FACE - SIMPLON)</h2>
         </header>
         
-        <section>
-            <!-- contenue du site ici - les test - tout ça, tout ça -->
-            <h3>Titre de section</h3>
-        </section>
+        <div class="flexbox">
+            <aside>
+                <div>
+                    <h3>Users</h3>
+                    
+                </div>
+            </aside>
+            
+            <section>
+                <!-- contenue du site ici - les test - tout ça, tout ça -->
+                <h3>Titre de section</h3>
+            </section>
+        </div>
         
         <footer>
             <p>Julien Malle, 2016. Projet de la Code Académie de Rennes (FACE - SIMPLON).</p>

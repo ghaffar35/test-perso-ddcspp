@@ -10,9 +10,23 @@ header, section, aside, footer {
     background-color: whitesmoke;
 }
 
+aside {
+    width: 15%;
+    min-width: 15%;
+    margin-right: 25px;
+}
+
+section {
+    width: 100%;
+}
+
 .container {
     width: 75%;
     margin: 50px auto;
+}
+
+.flexbox {
+    display: flex;
 }
 
 h1 {
