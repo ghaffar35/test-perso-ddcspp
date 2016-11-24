@@ -26,6 +26,14 @@
                             echo '<div class="user"><p><bold>'.$user['pseudo'].'</bold></p></p><i>'.$user['mail'].'</i></p></div>';
                         }
                     ?>
+                    
+                    <form action="post.php" method="post">Register
+                        <input type="text" placeholder="Pseudonyme" name="pseudo" id="pseudo">
+                        <input type="mail" placeholder="example@mail.com" name="mail" id="mail">
+                        <input type="radio" value="1" name="id_role" id="id_role"> Modo
+                        <input type="password" name="pwd" id="pwd">
+                        <input type="submit" value="OK">
+                    </form>
                 </div>
             </aside>
             
@@ -38,7 +46,7 @@
                     
                     // affichage des posts
                     while ($post = $posts->fetch()) {
-                        echo '<div class="post"><h3>'.$post['title'].'</h3><p><i>By, '.$post['pseudo'].' - '.$post['date'].'</i></p>'.'<div class="content">'.($post[type]==0?'':'<img src='.$post['url'] .'>').'<p>'.$post['description'].'</p></div></div>';
+                        echo '<div class="post"><h3>'.$post['title'].'</h3><p><i>By, '.$post['pseudo'].' - '.$post['date'].'</i></p>'.'<div class="content">'.($post['type'] == 0 ? '':'<img src='.$post['url'] .'>').'<p>'.$post['description'].'</p></div></div>';
                     }
                 ?>
             </section>
