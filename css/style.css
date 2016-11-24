@@ -43,3 +43,10 @@ a {
 a:hover {
     color: orangered;
 }
+
+img {
+    width: 20%;
+    height: auto;
+    float: left;
+    margin: 20px;
+}

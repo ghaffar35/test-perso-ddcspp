@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- connect to bdd -->   
+    <?php include('singleton.php'); ?>
     <div class="container">
         <header>
             <h1>Test BDD DDCSPP</h1>
