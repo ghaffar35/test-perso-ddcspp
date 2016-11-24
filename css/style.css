@@ -64,3 +64,17 @@ img {
     float: left;
     margin: 20px;
 }
+
+/* ----- */
+
+.user {
+    border-bottom: 1px dashed #222;
+}
+
+.user bold {
+    text-transform: capitalize;
+}
+
+.user i {
+    color: #444;
+}

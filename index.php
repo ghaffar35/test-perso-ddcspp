@@ -18,7 +18,14 @@
             <aside>
                 <div>
                     <h3>Users</h3>
-                    
+                    <?php 
+                        // préparation des users
+                        $users = $bdd->query('SELECT pseudo, mail, id_role FROM user ORDER BY ID');
+                        // affichage des users
+                        while ($user = $users->fetch()) {
+                            echo '<div class="user"><p><bold>'.$user['pseudo'].'</bold></p></p><i>'.$user[mail].'</i></p></div>';
+                        }
+                    ?>
                 </div>
             </aside>
             
