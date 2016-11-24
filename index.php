@@ -23,7 +23,7 @@
                         $users = $bdd->query('SELECT pseudo, mail, id_role FROM user ORDER BY ID');
                         // affichage des users
                         while ($user = $users->fetch()) {
-                            echo '<div class="user"><p><bold>'.$user['pseudo'].'</bold></p></p><i>'.$user[mail].'</i></p></div>';
+                            echo '<div class="user"><p><bold>'.$user['pseudo'].'</bold></p></p><i>'.$user['mail'].'</i></p></div>';
                         }
                     ?>
                 </div>
@@ -31,12 +31,21 @@
             
             <section>
                 <!-- contenue du site ici - les test - tout ça, tout ça -->
-                <h3>Titre de section</h3>
+                <h3>Posts</h3>
+                <?php
+                    // préparation des posts
+                    $posts = $bdd->query('SELECT author, title, description, date, url, type FROM post ORDER BY ID');
+                    //$author = $bdd->query('SELECT pseudo')
+                    // affichage des posts
+                    while ($post = $posts->fetch()) {
+                        echo '<div class="post"><h3>'.$post['title'].'</h3><p><i>By, '.$post['author'].' - '.$post['date'].'</i></p>'.'<div class="content">'.($post[type]==0?'':'<img src='.$post['url'] .'>').'<p>'.$post['description'].'</p></div></div>';
+                    }
+                ?>
             </section>
         </div>
         
         <footer>
-            <p>Julien Malle, 2016. Projet de la Code Académie de Rennes (FACE - SIMPLON).</p>
+            <p>Julien Malle, 2016. Projet de la Code Académie de Rennes (FACE - SIMPLON). Images of <a href="https://visualhunt.com" target="_blank">Visual Hunt</a>.</p>
         </footer>
     </div>
 </body>
