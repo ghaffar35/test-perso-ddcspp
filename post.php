@@ -12,6 +12,7 @@ $c_post = $bdd->prepare('INSERT INTO post (id_user, title, description, date, ur
 $c_post->execute(array($_POST['pseudo'], $_POST['mail'], $_POST['pwd'], $_POST['id_role']));
 
 // redirection
-header('Location: /bdd_ddcspp');
+//header('Location: /bdd_ddcspp');
+header('Location: /test-perso-ddcspp');
 
 ?>
